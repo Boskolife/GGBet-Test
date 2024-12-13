@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GGBet Test</title>
+  <link rel="stylesheet" href="/styles/main.scss">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:regular,500,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script type="module" src="/js/main.js" defer></script>
+</head>
+
+<body>
+  <div id="wrapper">
+    {{> header }}
+    <main>
+      <section class="main_section">
+        <div class="container">
+          <img class="square square_1" src="./images/squares_1.svg" alt="image not found">
+          <img class="square square_2" src="./images/squares_2.svg" alt="image not found">
+          <img class="square square_3" src="./images/squares_3.svg" alt="image not found">
+          <div class="content">
+            <div class="text_content">
+              <h1 class="main_title">
+                <span class="modify_text">Download luck </span>
+                play with GGBET!
+              </h1>
+              <form class="main_form" action="#" method="post">
+                <div class="input_wrap">
+                  <div class="input_body">
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <svg width="22" height="19" viewBox="0 0 22 19" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <rect x="1" y="1.5" width="20" height="16" rx="5" stroke-opacity="0.7"
+                        stroke-width="1.5" />
+                      <path d="M5 6.5L9.8 10.1C10.5111 10.6333 11.4889 10.6333 12.2 10.1L17 6.5"
+                        stroke-opacity="0.7" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                  <span class="error_message" aria-live="polite">Error Text</span>
+                </div>
+                <button class="form_btn"><span>subscribe</span></button>
+              </form>
+            </div>
+            <div class="img_wrap">
+              <div class="parallax_img--body">
+                <img class="parallax_img parallax_img_1" src="./images/parallax_1.webp"
+                  alt="image not found">
+                <img class="parallax_img parallax_img_2" src="./images/parallax_2.webp"
+                  alt="image not found">
+              </div>
+              <img class="parallax_img parallax_img_3" src="./images/parallax_3.webp"
+                alt="image not found">
+              <img class="parallax_img parallax_img_4" src="./images/parallax_4.webp"
+                alt="image not found">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="news">
+        <div class="container">
+          <div class="content">
+            <div class="news_cards-wrap">
+              <div class="swiper news_swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="card_body">
+                      <div class="card_img-wrap">
+                        <img class="corner corner_top" src="./images/corner_top.svg"
+                          alt="image not found">
+                        <img class="corner corner_bottom" src="./images/corner_bottom.svg"
+                          alt="image not found">
+                        <img class="card_img" src="./images/card_img_1.webp" alt="image not found">
+                      </div>
+                      <h2 class="card_title">Triple bonus on PGL Major quals cs</h2>
+                      <p class="card_text">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem
+                        Ipsum has been the industry's standard dummy text ever since...
+                      </p>
+                      <a href="#" class="card_link">...read more</a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card_body">
+                      <div class="card_img-wrap">
+                        <img class="corner corner_top" src="./images/corner_top.svg"
+                          alt="image not found">
+                        <img class="corner corner_bottom" src="./images/corner_bottom.svg"
+                          alt="image not found">
+                        <img class="card_img" src="./images/card_img_2.webp" alt="image not found">
+                      </div>
+                      <h2 class="card_title">Triple bonus on PGL Major quals cs</h2>
+                      <p class="card_text">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem
+                        Ipsum has been the industry's standard dummy text ever since...
+                      </p>
+                      <a href="#" class="card_link">...read more</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper_nav">
+                  <div class="swiper-pagination"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    {{> footer }}
+  </div>
+</body>
+
+</html>

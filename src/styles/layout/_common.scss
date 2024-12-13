@@ -1,0 +1,520 @@
+html {
+
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: $orangeFF;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background-color: $black;
+
+    &:has(:popover-open) {
+        overflow: hidden;
+    }
+}
+
+#wrapper {
+    overflow: hidden;
+}
+
+.body_lock {
+    overflow: hidden;
+}
+
+
+.form_btn {
+    background-color: rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 15.7px 0px #FFF inset, 0px 0px 35.6px 0px #FFF inset;
+    backdrop-filter: blur(2.449502944946289px);
+    border: none;
+    width: 100%;
+    height: 73px;
+    text-align: center;
+    clip-path: polygon(5% 0, 80% 0%, 100% 0, 100% 80%, 95% 100%, 20% 100%, 0 100%, 0% 20%);
+    transition: all .3s ease 0s;
+
+    span {
+        color: $white;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 114.6%;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        display: inline-block;
+    }
+}
+
+.card_link {
+    color: $orange;
+    font-family: 'Roboto';
+    @include adaptive-value("font-size", 24, 18, 1);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.6px;
+    text-decoration: underline;
+    transition: all .3s ease 0s;
+    width: max-content;
+}
+
+.input_wrap {
+
+    &:has(input:user-invalid) {
+
+        .error_message {
+            display: block;
+        }
+    }
+}
+
+.input_body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 10px;
+    background-color: $grayD9;
+    padding: 21px 26px;
+    border: 2px solid transparent;
+
+    &:has(input:user-invalid) {
+        transition: all .3s ease 0s;
+        border-color: $red;
+
+        svg {
+
+            path,
+            rect {
+                stroke: $red;
+            }
+        }
+
+        .error_message {
+            display: block;
+        }
+    }
+
+    &:has(input:valid) {
+        transition: all .3s ease 0s;
+        border-color: $green;
+
+        svg {
+
+            path,
+            rect {
+                stroke: $green;
+            }
+        }
+    }
+
+    input {
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        font-size: 18px;
+        color: $black;
+        transition: all .3s ease 0s;
+
+        &::placeholder {
+            color: rgba(0, 0, 0, 0.70);
+            font-family: 'Roboto';
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 88.88%
+        }
+    }
+
+    svg {
+        width: 20px;
+        height: 16px;
+        transition: all .3s ease 0s;
+
+        path,
+        rect {
+            stroke: $black;
+        }
+    }
+}
+
+
+.error_message {
+    color: $red;
+    font-family: 'Roboto';
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    margin-top: 5px;
+    display: none;
+}
+
+.container {
+    max-width: 1108px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.main_section {
+    @include adaptive-value("padding-top", 90, 116, 1);
+    @include adaptive-value("padding-bottom", 75, 30, 1);
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        @include adaptive-value("top", 180, 100, 1);
+        left: -150px;
+        @include adaptive-value("width", 1000, 300, 1);
+        @include adaptive-value("height", 1000, 500, 1);
+        @include adaptive-value("border-radius", 1000, 500, 1);
+        background: radial-gradient(50% 50% at 50% 50%, #FF4800 0%, rgba(255, 72, 0, 0.00) 100%);
+        filter: blur(60px);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        @include adaptive-value("top", -500, -50, 1);
+        right: -150px;
+        @include adaptive-value("width", 1000, 300, 1);
+        @include adaptive-value("height", 1000, 500, 1);
+        @include adaptive-value("border-radius", 1000, 500, 1);
+        background: radial-gradient(50% 50% at 50% 50%, #FF4800 0%, rgba(255, 72, 0, 0.00) 100%);
+        filter: blur(60px);
+    }
+
+    .container {
+        position: relative;
+    }
+
+    .square {
+        position: absolute;
+    }
+
+    .square_1 {
+        width: 175px;
+        height: auto;
+        bottom: 5%;
+        right: -18%;
+
+        @include media ("<desktop") {
+            display: none;
+        }
+    }
+
+    .square_2 {
+        width: 130px;
+        height: auto;
+        bottom: -10%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @include media ("<desktop") {
+            left: 7%;
+            transform: translateX(0) rotate(90deg);
+            bottom: 60%;
+            width: 80px;
+        }
+    }
+
+    .square_3 {
+        width: 65px;
+        height: auto;
+        top: 20%;
+        left: -10%;
+        transform: translateX(-50%);
+
+        @include media ("<desktop") {
+            right: 5%;
+            left: auto;
+            transform: rotate(180deg);
+            width: 32px;
+        }
+    }
+
+    .content {
+        display: flex;
+        align-items: flex-start;
+        gap: 50px;
+
+        @include media ("<desktop") {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+    }
+
+    .text_content {
+        max-width: 450px;
+        width: 100%;
+        padding: 0 10px;
+        @include adaptive-value("padding-top", 110, 0, 1);
+    }
+
+    .main_title {
+        color: $white;
+        @include adaptive-value("font-size", 73, 50, 1);
+        font-weight: 700;
+        line-height: 90%;
+        letter-spacing: -1.821px;
+        text-transform: uppercase;
+        @include adaptive-value("margin-bottom", 70, 40, 1);
+
+        .modify_text {
+            background: linear-gradient(180deg, #FF4800 0%, #FFF 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            @include adaptive-value("font-size", 45, 32, 1);
+            letter-spacing: -1.138px;
+        }
+    }
+
+    .input_wrap {
+        margin-bottom: 30px;
+    }
+
+    @media (hover:hover) {
+        .form_btn {
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.20);
+                transition: all .3s ease 0s;
+            }
+        }
+    }
+
+    @media (hover:none) {
+        .form_btn {
+            &:active {
+                background-color: rgba(255, 255, 255, 0.20);
+                transition: all .3s ease 0s;
+            }
+        }
+    }
+
+    .img_wrap {
+        width: 615px;
+        @include adaptive-value("height", 540, 280, 1);
+        position: relative;
+
+        @include media ("<desktop") {
+            max-width: 500px;
+            width: 100%;
+        }
+
+        @include media ("<tablet") {
+            max-width: 390px;
+        }
+
+        @include media ("<phone") {
+            max-width: 320px;
+        }
+    }
+
+
+    .parallax_img--body {
+        position: absolute;
+        right: 45px;
+        top: 0;
+        width: 383px;
+        height: auto;
+        @include adaptive-value("width", 383, 199, 1);
+    }
+
+    .parallax_img_1 {
+        width: 100%;
+        height: 100%;
+    }
+
+    .parallax_img_2 {
+        position: absolute;
+        right: -92px;
+        top: 70px;
+        @include adaptive-value("right", -92, -55, 1);
+        @include adaptive-value("top", 70, 32, 1);
+        width: 180px;
+        height: auto;
+        @include adaptive-value("width", 180, 100, 1);
+    }
+
+    .parallax_img_3 {
+        position: absolute;
+        width: 183px;
+        height: auto;
+        left: 0;
+        top: 9%;
+        @include adaptive-value("width", 183, 95, 1);
+    }
+
+    .parallax_img_4 {
+        position: absolute;
+        width: 346px;
+        height: auto;
+        bottom: 0;
+        right: 20%;
+        @include adaptive-value("width", 346, 180, 1);
+
+        @include media ("<desktop") {
+            bottom: 15px;
+            right: 15%;
+        }
+    }
+}
+
+.news {
+    @include adaptive-value("padding-top", 75, 30, 1);
+    @include adaptive-value("padding-bottom", 52, 60, 1);
+
+    .swiper-wrapper {
+        align-items: center;
+    }
+
+    .card_body {
+        display: flex;
+        flex-direction: column;
+        @include adaptive-value("row-gap", 40, 30, 1);
+    }
+
+    .card_img-wrap {
+        position: relative;
+        width: 100%;
+        @include adaptive-value("height", 340, 300, 1);
+        border: 6px solid $orangeFF;
+        box-sizing: border-box;
+
+        @include media ("<phone") {
+            border-width: 5px;
+        }
+
+        .card_img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .corner {
+            position: absolute;
+        }
+
+        .corner_bottom {
+            bottom: -6px;
+            left: -6px;
+
+            @include media ("<phone") {
+                bottom: -5px;
+                left: -5px;
+            }
+        }
+
+        .corner_top {
+            top: -6px;
+            right: -6px;
+
+            @include media ("<phone") {
+                top: -5px;
+                right: -5px;
+            }
+        }
+    }
+
+    .card_title {
+        color: $orange;
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 90%;
+        letter-spacing: -0.9px;
+        text-transform: uppercase;
+    }
+
+    .card_text {
+        color: $white;
+        font-family: 'Roboto';
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 150%;
+        letter-spacing: -0.6px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        -webkit-line-clamp: 3;
+    }
+
+    @media (hover:hover) {
+        .card_link {
+            &:hover {
+                color: $white;
+                transition: all .3s ease 0s;
+            }
+        }
+    }
+
+    @media (hover:none) {
+        .card_link {
+            &:active {
+                color: $white;
+            }
+        }
+    }
+
+    .swiper_nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 20px;
+        position: relative;
+        max-width: 110px;
+        width: 100%;
+        margin: 0 auto;
+        height: 30px;
+    }
+
+    .swiper-pagination {
+        position: static;
+    }
+
+    .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+        border-radius: 0;
+        background-color: $white;
+        opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: $orangeFF;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 17px;
+        height: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0;
+
+        &::after {
+            content: url(../images/swiper_arrow.svg);
+
+        }
+    }
+
+    .swiper-button-next {
+        &::after {
+            transform: rotate(180deg);
+        }
+    }
+}

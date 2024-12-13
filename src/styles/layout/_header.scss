@@ -1,0 +1,260 @@
+#header {
+    padding: 24px 0;
+    border-bottom: 1px solid $black26;
+    background: rgba(0, 0, 0, 0.60);
+    backdrop-filter: blur(7.5px);
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    @include media ("<tablet") {
+        background-color: $black_secondary;
+    }
+
+    .header_content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 40px;
+    }
+
+    .header_logo {
+        @include adaptive-value("width", 204, 119, 1);
+        @include adaptive-value("height", 40, 23, 1);
+    }
+
+    .nav,
+    .nav-menu {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav {
+        justify-content: space-between;
+        width: 60%;
+        column-gap: 30px;
+
+        @include media ("<850px") {
+            width: 70%;
+        }
+
+        @include media ("<tablet") {
+            position: absolute;
+            top: 72px;
+            right: -100%;
+            transition: all .3s ease 0s;
+            height: 100dvh;
+            width: 100%;
+            background-color: $black_secondary;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-top: 48px;
+            row-gap: 32px;
+        }
+    }
+
+    .menu_active {
+        right: 0;
+        transition: all .3s ease 0s;
+    }
+
+    .nav-menu {
+        column-gap: 40px;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+            row-gap: 32px;
+        }
+    }
+
+    .item_link,
+    .header_btn {
+        color: #FFF;
+        text-align: center;
+        font-family: 'Roboto';
+        font-size: 16px;
+        line-height: 100%;
+    }
+
+    .item_link {
+        @include media ("<tablet") {
+            font-size: 18px;
+        }
+    }
+
+    .header_btn {
+        border-radius: 40px;
+        background: $orange;
+        border: none;
+        padding: 12px;
+        min-width: 142px;
+    }
+
+    .header_burger {
+        display: none;
+        min-width: 20px;
+        min-height: 16px;
+        position: relative;
+        z-index: 3;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        margin: 0;
+
+        @include media ("<tablet") {
+            display: block;
+        }
+
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            left: 0;
+            background: $white;
+            transition: all 0.4s ease;
+        }
+
+        span {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: $white;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            transition: all 0.4s ease;
+            opacity: 1;
+        }
+
+        &::after {
+            bottom: 0;
+        }
+
+        &::before {
+            top: 0;
+        }
+    }
+
+    .burger_active {
+        &::after {
+            transform: rotate(-45deg);
+            bottom: 9px;
+            height: 3px;
+            top: 50%;
+        }
+
+        &::before {
+            transform: rotate(45deg);
+            top: 8px;
+            height: 3px;
+        }
+
+        span {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    .validationPopUp {
+        background-color: $black;
+        max-width: 1040px;
+        width: calc(100% - 20px);
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 30px;
+        display: none;
+        @include adaptive-value("padding-top", 70, 50, 1);
+        @include adaptive-value("padding-bottom", 70, 15, 1);
+        @include adaptive-value("padding-right", 70, 15, 1);
+        @include adaptive-value("padding-left", 70, 15, 1);
+
+        @include media ("<desktop") {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &::backdrop {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        &:popover-open {
+            display: flex;
+        }
+    }
+
+    .closePopUp {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 15px;
+        height: 15px;
+        color: $white;
+        border:none;
+        background-color: transparent;
+    }
+
+    .column {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        row-gap: 34px;
+
+        @include media ("<desktop") {
+            width: 100%;
+            align-items: center;
+        }
+    }
+
+    .column_elem {
+        display: flex;
+        align-items: center;
+        gap: 34px;
+
+        .input_body,
+        .form_btn {
+            max-width: 300px;
+
+            @include media ("<phone") {
+                width: 200px;
+            }
+        }
+
+        .hover_btn {
+            background-color: rgba(255, 255, 255, 0.20);
+        }
+
+        .hover_link {
+            color: $white;
+        }
+
+        .input_body {
+            margin-bottom: 0;
+            height: 58px;
+
+
+        }
+    }
+
+    .column_text {
+        color: $white;
+        font-family: 'Roboto';
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 16px;
+        width: 70px;
+    }
+
+    .btn_elem {
+        @include adaptive-value("margin-bottom", 86, 34, 1);
+
+        @include media ("<tablet") {
+            margin: 0;
+        }
+    }
+}
