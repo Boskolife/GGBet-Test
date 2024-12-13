@@ -64,7 +64,12 @@ body {
     font-weight: 400;
     line-height: 150%;
     letter-spacing: -0.6px;
-    text-decoration: underline;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
     transition: all .3s ease 0s;
     width: max-content;
 }

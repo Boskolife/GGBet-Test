@@ -52,17 +52,6 @@ p {
 	margin: 0;
 }
 
-a {
-	color: $base-link-color;
-	text-decoration: none;
-	transition: color .3s ease;
-
-	&:hover,
-	&:focus {
-		text-decoration: none;
-	}
-}
-
 ul{
 	padding: 0;
 	margin: 0;
