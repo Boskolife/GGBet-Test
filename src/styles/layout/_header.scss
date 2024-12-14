@@ -194,7 +194,7 @@
         width: 15px;
         height: 15px;
         color: $white;
-        border:none;
+        border: none;
         background-color: transparent;
     }
 
@@ -236,8 +236,36 @@
         .input_body {
             margin-bottom: 0;
             height: 58px;
+        }
 
+        .error {
+            
+            .input_body{
+                border-color: $red;
+                svg {
 
+                path,
+                rect {
+                    stroke: $red;
+                }
+            }
+            }
+
+            .error_message {
+                display: block;
+            }
+        }
+
+        .success {
+            border-color: $green;
+
+            svg {
+
+                path,
+                rect {
+                    stroke: $green;
+                }
+            }
         }
     }
 
